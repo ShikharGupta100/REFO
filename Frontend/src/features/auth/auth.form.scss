@@ -1,0 +1,112 @@
+/* Global reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Variables */
+$bg-body: #212121;
+$primary: #00d4ff;
+$secondary: #340979;
+$text-color: #ffffff;
+$border-radius: 6px;
+
+/* Page layout */
+body {
+  margin: 0;
+  font-family: monospace, serif;
+  background-color: $bg-body;
+  color: $text-color;
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Form container */
+.form-container {
+  width: 350px;
+  padding: 40px 30px;
+  background: linear-gradient(
+    135deg,
+    rgba(2, 0, 36, 1),
+    $secondary,
+    $primary
+  );
+  border-radius: 10px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+
+  h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+  }
+}
+
+/* Input groups */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 22px;
+
+  label {
+    margin-bottom: 6px;
+    font-size: 14px;
+    opacity: 0.9;
+  }
+
+  input {
+    padding: 14px 16px;
+    border-radius: $border-radius;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: transparent;
+    color: $text-color;
+    font-size: 15px;
+    letter-spacing: 0.05em;
+    transition: all 0.25s ease;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $primary;
+      box-shadow: 0 0 8px rgba(0, 212, 255, 0.7);
+    }
+  }
+}
+
+/* Button */
+.button {
+  width: 100%;
+  padding: 14px;
+  border-radius: $border-radius;
+  border: none;
+  cursor: pointer;
+  font-family: monospace;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 0.15em;
+  transition: all 0.3s ease;
+}
+
+/* Primary button */
+.primary-button {
+  background: linear-gradient(90deg, $secondary, $primary);
+  color: $text-color;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(0, 212, 255, 0.5);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 6px 12px rgba(0, 212, 255, 0.4);
+  }
+}
